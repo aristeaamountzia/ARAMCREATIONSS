@@ -1,0 +1,49 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = ".netlify/functions-dist"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/catalog-backups"
+  to = "/.netlify/functions/catalog-backups"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/order-email-test"
+  to = "/.netlify/functions/order-email-test"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/media"
+  to = "/.netlify/functions/media"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/orders"
+  to = "/.netlify/functions/orders"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/backoffice-ai"
+  to = "/.netlify/functions/backoffice-ai"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/wix-project"
+  to = "/.netlify/functions/wix-project"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+  force = true
